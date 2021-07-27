@@ -3,7 +3,7 @@ do {
     $count++
     Write-Output "[$env:STAGE_NAME] Starting container [Attempt: $count]"
     
-    $testStart = Invoke-WebRequest -Uri http://localhost:8080 -UseBasicParsing
+    $testStart = Invoke-WebRequest -Uri http://127.0.0.1:8080 -UseBasicParsing
     
     if ($testStart.statuscode -eq '200') {
         $started = $true
