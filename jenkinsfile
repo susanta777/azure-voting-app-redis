@@ -60,7 +60,7 @@ steps{
 
       script{
 
-         docker.withregistry("httpd://index.docker.io/vi/","DockerHub")
+         docker.withRegistry("httpd://index.docker.io/vi/","DockerHub")
          def image=docker.build("blakdentech/jenkins-course:latest")
          image.push
       }
