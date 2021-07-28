@@ -58,7 +58,7 @@ steps{
    echo "workspace is $WORKSPACE"
    dir("$WORKSPACE/azure-vote"){
 
-   withCredentials([usernamePassword( credentialsId: 'docker-hub-credentials', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]) {
+withCredentials([usernamePassword( credentialsId: 'docker-hub-credentials', usernameVariable: 'USER', passwordVariable: 'PASSWORD')]) {
         def registry_url = "index.docker.io/vi/"
         bat "docker login -u $USER -p $PASSWORD ${registry_url}"
         docker.withRegistry("https://${registry_url}", "DockerHub") {
@@ -68,13 +68,13 @@ steps{
     }
 
 
-     # script{
+     //script{
 
-      #   docker.withRegistry('https://index.docker.io/vi/','DockerHub'){
-       #  def image=docker.build("susanta1561/jenkins-course:latest")
-        # image.push()
-         #}
-      #}
+      //  docker.withRegistry('https://index.docker.io/vi/','DockerHub'){
+       // def image=docker.build("susanta1561/jenkins-course:latest")
+        // image.push()
+         //}
+      //}
    }
 }
 
